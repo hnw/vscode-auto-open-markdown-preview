@@ -1,6 +1,6 @@
 {
-    "name": "markdown-preview-plus",
-    "displayName": "Markdown preview plus",
+    "name": "vscode-markdown-preview-plus",
+    "displayName": "Markdown Preview Plus",
     "description": "Additional functions for VSCode Markdown preview",
     "version": "0.0.1",
     "publisher": "hnw",
@@ -14,12 +14,6 @@
         "onLanguage:markdown"
     ],
     "main": "./out/src/extension",
-    "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
-    },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
         "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
