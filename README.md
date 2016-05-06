@@ -1,13 +1,35 @@
-# README
-## This is the README for your extension "markdown-preview-plus"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# vscode-markdown-preview-plus
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+Visual Studio Codeで新たなMarkdownファイルを開いたときに、自動的にプレビュー表示も開くextensionです。毎回手動でpreview side-by-side(⌘+K V)をタイプするのが面倒になったので作りました。
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+# Running Extension
 
-**Enjoy!**
+インストールせずに動作を試したり、改造したりしたい場合は次のようにします。
+
+``` shellsession
+$ git clone https://github.com/hnw/vscode-markdown-preview-plus.git
+$ cd vscode-markdown-preview-plus.git
+$ npm install
+$ code --disable-extensions .
+```
+
+VSCode起動後`F5`でextensionがデバッガ動作します。
+
+# Packaging Extension
+
+下記のコマンドでプロジェクトディレクトリに`*.vsix`（今回なら`vscode-markdown-preview-plus-0.0.1.vsix`）ファイルが出来ます。これがVSCodeのextension packageになります。
+
+``` shellsession
+$ npm install -g vsce
+$ vsce package
+```
+
+# Installing Extension
+
+``` shellsession
+$ code vscode-markdown-preview-plus-0.0.1.vsix
+```
+
+# To Do
+
+- エディタ側で編集している場所とプレビュー画面の表示箇所の同期を取りたい（現状だとiframe内の操作はできない？）
