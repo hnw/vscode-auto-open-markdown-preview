@@ -1,7 +1,7 @@
 {
-    "name": "vscode-markdown-preview-plus",
-    "displayName": "Markdown Preview Plus",
-    "description": "Additional functions for VSCode Markdown preview",
+    "name": "vscode-auto-open-markdown-preview",
+    "displayName": "Auto-Open Markdown Preview",
+    "description": "Open Markdown preview automatically when opening a Markdown file",
     "version": "0.0.1",
     "publisher": "hnw",
     "engines": {
