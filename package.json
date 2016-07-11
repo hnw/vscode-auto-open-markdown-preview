@@ -2,8 +2,9 @@
     "name": "vscode-auto-open-markdown-preview",
     "displayName": "Auto-Open Markdown Preview",
     "description": "Open Markdown preview automatically when opening a Markdown file",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "hnw",
+    "repository" : "https://github.com/hnw/vscode-auto-open-markdown-preview",
     "engines": {
         "vscode": "^1.0.0"
     },
