@@ -4,6 +4,15 @@ import {workspace, window, commands, ExtensionContext} from 'vscode';
 
 export function activate(context: ExtensionContext) {
     let alreadyOpenedFirstMarkdown = false;
+    let markdown_preview_command_id = "";
+    let close_other_editor_command_id = "";
+    if (vscode.version >= "1.3.0") {
+        close_other_editor_command_id = "workbench.action.closeEditorsInOtherGroups";
+        markdown_preview_command_id = "markdown.showPreviewToSide";
+    } else {
+        close_other_editor_command_id = "workbench.action.closeOtherEditors";
+        markdown_preview_command_id = "workbench.action.markdown.openPreviewSideBySide";
+    }
     function previewFirstMarkdown() {
         if (alreadyOpenedFirstMarkdown) {
 	    return;
@@ -18,8 +27,8 @@ export function activate(context: ExtensionContext) {
         }
     }
     function openMarkdownPreviewSideBySide() {
-        commands.executeCommand("workbench.action.closeOtherEditors")
-        .then(() => commands.executeCommand("workbench.action.markdown.openPreviewSideBySide"))
+        commands.executeCommand(close_other_editor_command_id)
+        .then(() => commands.executeCommand(markdown_preview_command_id))
         .then(() => {}, (e) => console.error(e));
     }
 
@@ -31,9 +40,9 @@ export function activate(context: ExtensionContext) {
         });
     }
 
-    vscode.workspace.onDidOpenTextDocument((d)=>{
-        if (d.languageId === "markdown") {
-	    openMarkdownPreviewSideBySide();
+    vscode.workspace.onDidOpenTextDocument((doc)=>{
+        if (doc && doc.languageId === "markdown") {
+            openMarkdownPreviewSideBySide();
         }
     });
 }
