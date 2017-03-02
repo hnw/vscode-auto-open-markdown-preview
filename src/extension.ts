@@ -1,12 +1,13 @@
 'use strict';
 import * as vscode from 'vscode';
 import {workspace, window, commands, ExtensionContext} from 'vscode';
+import * as semver from 'semver';
 
 export function activate(context: ExtensionContext) {
     let alreadyOpenedFirstMarkdown = false;
     let markdown_preview_command_id = "";
     let close_other_editor_command_id = "";
-    if (vscode.version < "1.3.0") {
+    if (semver.lt(vscode.version, "1.3.0")) {
         close_other_editor_command_id = "workbench.action.closeOtherEditors";
         markdown_preview_command_id = "workbench.action.markdown.openPreviewSideBySide";
     } else {
