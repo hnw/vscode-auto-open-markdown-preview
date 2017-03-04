@@ -6,13 +6,8 @@ export function activate(context: ExtensionContext) {
     let alreadyOpenedFirstMarkdown = false;
     let markdown_preview_command_id = "";
     let close_other_editor_command_id = "";
-    if (vscode.version < "1.3.0") {
-        close_other_editor_command_id = "workbench.action.closeOtherEditors";
-        markdown_preview_command_id = "workbench.action.markdown.openPreviewSideBySide";
-    } else {
-        close_other_editor_command_id = "workbench.action.closeEditorsInOtherGroups";
-        markdown_preview_command_id = "markdown.showPreviewToSide";
-    }
+    close_other_editor_command_id = "workbench.action.closeEditorsInOtherGroups";
+    markdown_preview_command_id = "markdown.showPreviewToSide";
     function previewFirstMarkdown() {
         if (alreadyOpenedFirstMarkdown) {
 	    return;

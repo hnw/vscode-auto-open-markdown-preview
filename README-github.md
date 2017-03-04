@@ -29,7 +29,3 @@ $ vsce package
 ``` shellsession
 $ code vscode-auto-open-markdown-preview-0.0.1.vsix
 ```
-
-# To-do
-
-- エディタ側で編集している場所とプレビュー画面の表示箇所の同期を取りたい（現行バージョンだとiframe内の操作は無理？）
