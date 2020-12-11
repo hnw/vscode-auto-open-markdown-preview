@@ -12,7 +12,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onLanguage:markdown"
+        "onLanguage:markdown",
+		"onLanguage:asciidoc"
     ],
     "main": "./out/src/extension",
     "scripts": {
